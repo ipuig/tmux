@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+session=`tmux ls | fzf`
+session_to_go=`echo $session | awk -F ':' '{print $1}'`
+tmux switch-client -t $session_to_go
