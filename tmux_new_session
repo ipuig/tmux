@@ -11,4 +11,3 @@ if [ "$TERM_PROGRAM" = tmux ];
 then tmux switch-client -t $session_name
 else tmux attach -t $session_name
 fi
-
