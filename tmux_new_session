@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-session=$(find ~/.playground/study ~/.playground/projects -mindepth 1 -maxdepth  1 -type d | fzf)
+session=$(find ~/.playground/study ~/.playground/projects ~/Desktop -mindepth 1 -maxdepth  1 -type d | fzf)
 session_name=$(basename $session)
 
 if ! tmux has-session -t $session_name 2> /dev/null; 
