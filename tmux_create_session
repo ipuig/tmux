@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+from os import path, system
+
+def check_accident(session_data: list[str]):
+    if session_data[0] == "" or session_data[1] == "q":
+        exit(0)
+
+session_data = input("Create Session\n>  ").split(":")
+check_accident(session_data)
+dir = path.dirname(path.realpath(__file__)) if len(session_data) <= 1 else session_data[1]
+system(f"tmux new-session -d -s {session_data[0]} -c {dir}")
+exit(0)
